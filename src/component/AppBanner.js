@@ -2,6 +2,7 @@ import React from "react";
 import "./AppBanner.css";
 import $ from "jquery";
 import {useState} from "react";
+import { Link } from "react-router-dom";
 
 function AppBanner() {
 
@@ -12,13 +13,17 @@ function AppBanner() {
             <nav className="nav">
                 <div className="container">
                     <div className="logo">
-                        <img class="logo-img" src="image/Logo.png" width="50" height="50"/>
+                        <Link to="/BuildSomething">
+                            <img class="logo-img" src="image/Logo.png" width="50" height="50"/>
+                        </Link>
                     </div>
                     <div id="mainListDiv" className="main_list">
                         <ul className="navlinks">
                 
                             <li>
-                                <a href="#">Build your gear</a>
+                                <Link to="/BuildSomething">
+                                    Build your gear
+                                </Link>
                             </li>
                             <li>
                                 <a href="#">Login</a>

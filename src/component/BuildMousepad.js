@@ -4,7 +4,7 @@ import AppBanner from './AppBanner'
 import { Link } from "react-router-dom";
 
 
-function BuildSomething() {
+function BuildMousepad() {
     return (
         <div className="App">
             <AppBanner/>
@@ -109,12 +109,8 @@ function BuildSomething() {
 
                     <main className="page-main">
                         <div className="content">
-                            <div class="grid-main1">
-                                <div className="text-mid">
-                                    <h1>Build Something ?</h1>
-                                </div>
-                                
-                                {/* <div class="item-main">
+                            <div class="grid-main">
+                                <div class="item-main">
                                     <div class="content-main">
                                     <p>11111</p>
                                     </div>
@@ -133,7 +129,7 @@ function BuildSomething() {
                                     <div class="content-main">
                                     <p>44444</p>
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     </main>
@@ -153,4 +149,4 @@ function BuildSomething() {
 
 
 
-export default BuildSomething;
+export default BuildMousepad;
