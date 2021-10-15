@@ -158,34 +158,6 @@ function BuildKeyboard({ cate, url }) {
                     </aside>
 
 
-                    {/* <main className="page-main">
-                        <div className="content">
-                            <div class="grid-main">
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>11111</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>22222</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>33333</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>44444</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </main> */}
-
-
                     <main className="page-main">
 
                         {/* <div class="grid-filter">
