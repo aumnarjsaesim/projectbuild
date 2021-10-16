@@ -1,3 +1,4 @@
+import React from "react";
 import "./BuildSomething.css";
 import Footer from './Footer'
 import AppBanner from './AppBanner'
@@ -107,33 +108,12 @@ function BuildSomething() {
                     </aside>
 
 
-                    <main className="page-main">
-                        <div className="content">
+                    <main className="page-main-bst">
+                        <div className="content-bst">
                             <div class="grid-main1">
                                 <div className="text-mid">
                                     <h1>Build Something ?</h1>
                                 </div>
-                                
-                                {/* <div class="item-main">
-                                    <div class="content-main">
-                                    <p>11111</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>22222</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>33333</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>44444</p>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </main>

@@ -6,6 +6,7 @@ import BuildKeyboard from './component/BuildKeyboard';
 import BuildHeadset from './component/BuildHeadset';
 import BuildMousepad from './component/BuildMousepad';
 import BuildMicrophone from './component/BuildMicrophone';
+import MyBuild from './component/MyBuild';
 import { Switch, Route} from "react-router";
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/BuildSomethingMicrophone">
           <BuildMicrophone/>
+        </Route>
+        <Route path="/MyBuild">
+          <MyBuild/>
         </Route>
       </Switch>
     </div>

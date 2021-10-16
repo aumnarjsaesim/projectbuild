@@ -1,6 +1,7 @@
+import React from "react";
 import "./BuildSomething.css";
-import Footer from './Footer'
-import AppBanner from './AppBanner'
+import Footer from './Footer';
+import AppBanner from './AppBanner';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
@@ -9,9 +10,9 @@ import axios from "axios";
 function BuildKeyboard({ cate, url }) {
 
     const [allBrand , SetAllbrand] = useState([]);
-  const [brand , setBrand] = useState('');
-  const [sort , setSort ] = useState('');
-  const [products, setProducts] = useState([
+    const [brand , setBrand] = useState('');
+    const [sort , setSort ] = useState('');
+    const [products, setProducts] = useState([
     {
      
     

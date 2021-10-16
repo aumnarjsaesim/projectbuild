@@ -26,6 +26,11 @@ function AppBanner() {
                                 </Link>
                             </li>
                             <li>
+                                <Link to="/MyBuild">
+                                    MyBuild
+                                </Link>
+                            </li>
+                            <li>
                                 <a href="#">Login</a>
                             </li>
                         </ul>

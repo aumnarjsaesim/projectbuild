@@ -95,6 +95,12 @@ body {
 .page-main {
     grid-area: main;
     padding-bottom: 400px;
+    height:100%;
+}
+
+.page-main-bst {
+  grid-area: main;
+  height:100%;
 }
   
 .page-footer {
@@ -116,6 +122,16 @@ body {
     box-sizing: border-box;
     height: auto;
     padding: 10px;
+}
+
+.content-bst {
+  color: #ffffff;
+  background-color: #202020;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
 }
 
   /* .grid { */
@@ -243,3 +259,24 @@ body {
   .app-search{
     font-weight: 600;
   }
+
+  .card-content span{
+    display: none;
+    position: absolute;
+    margin-top: -250px;
+    margin-left: 60px;
+  }
+
+  .card-content:hover span{
+    display: block;
+  }
+
+  .card-content span input[type="button"]{
+    width: 150px;
+    height: 50px;
+    background:rgb(241, 158, 62);
+    border-radius: 15px;
+    box-shadow: 0 0 10px 2px #000;
+    cursor: pointer;
+  }
+

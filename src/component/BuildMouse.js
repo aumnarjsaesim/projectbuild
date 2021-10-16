@@ -27,7 +27,7 @@ function BuildMouse() {
   
     useEffect(async () => {
       const res = await axios.get(
-        `http://localhost:3001/products/Mouse/?page=1${sort}`
+        `http://localhost:3001/products/Mouse/?page=${page}`
       );
       const dataProduct = res.data.data;
       const dataPage = {
@@ -140,32 +140,6 @@ function BuildMouse() {
                     </aside>
 
 
-                    {/* <main className="page-main">
-                        <div className="content">
-                            <div class="grid-main">
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>11111</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>22222</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>33333</p>
-                                    </div>
-                                </div>
-                                <div class="item-main">
-                                    <div class="content-main">
-                                    <p>44444</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </main> */}
 
                     <main className="page-main">
 
@@ -261,6 +235,7 @@ function BuildMouse() {
                                                         </tr>
                                                     </table>
                                                 </div>
+                                                <span><input type="button" value="ADD TO LIST"/></span>
                                             </div>
                                        
                                         </div>
