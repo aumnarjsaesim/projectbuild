@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 function BuildSomething() {
     return (
         <div className="App">
-            <AppBanner/>
             <div className="content-all">
                 <div className="grid">
 
@@ -24,14 +23,14 @@ function BuildSomething() {
                             <div className="flexbox">
                                 <div className="item30">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingMouse" className="content-cate">
+                                        <Link to="/Build/Mouse" cate="Mouse" url="Mouse" className="content-cate">
                                             <img src="/image/iconmouse.png" className="pic-cate"/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingMouse" className="content-cate">
+                                        <Link to="/Build/Mouse" cate="Mouse" url="Mouse" className="content-cate">
                                             <h4>Mouse</h4>
                                         </Link>
                                     </div>
@@ -40,14 +39,14 @@ function BuildSomething() {
                             <div className="flexbox">
                                 <div className="item30">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingKeyboard" className="content-cate">
+                                        <Link to="/Build/Keyboard" cate="Keyboard" url="Keyboard" className="content-cate">
                                             <img src="/image/iconkeyboard.png" className="pic-cate"/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingKeyboard" className="content-cate">
+                                        <Link to="/Build/Keyboard" cate="Keyboard" url="Keyboard" className="content-cate">
                                             <h4>Keyboard</h4>
                                         </Link>
                                     </div>
@@ -56,14 +55,14 @@ function BuildSomething() {
                             <div className="flexbox">
                                 <div className="item30">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingHeadset" className="content-cate">
+                                        <Link to="/Build/Headset" className="content-cate">
                                             <img src="/image/iconheadset.png" className="pic-cate"/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingHeadset" className="content-cate">
+                                        <Link to="/Build/Headset" className="content-cate">
                                             <h4>Headset</h4>
                                         </Link>
                                     </div>
@@ -72,14 +71,14 @@ function BuildSomething() {
                             <div className="flexbox">
                                 <div className="item30">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingMousepad" className="content-cate">
+                                        <Link to="/Build/Mousepad" className="content-cate">
                                             <img src="/image/iconmousepad.png" className="pic-cate"/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingMousepad" className="content-cate">
+                                        <Link to="/Build/Mousepad" className="content-cate">
                                             <h4>Mousepad</h4>
                                         </Link>
                                     </div>
@@ -88,14 +87,14 @@ function BuildSomething() {
                             <div className="flexbox">
                                 <div className="item30">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingMicrophone" className="content-cate">
+                                        <Link to="/Build/Microphone" className="content-cate">
                                             <img src="/image/iconmicrophone.png" className="pic-cate"/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
-                                        <Link to="/BuildSomethingMicrophone" className="content-cate">
+                                        <Link to="/Build/Microphone" className="content-cate">
                                             <h4>Microphone</h4>
                                         </Link>
                                     </div>
@@ -124,8 +123,6 @@ function BuildSomething() {
                 </div>
                 
             </div>
-            
-            <Footer/>
         </div>
         
     );

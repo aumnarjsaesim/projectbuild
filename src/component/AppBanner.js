@@ -14,7 +14,7 @@ function AppBanner() {
                 <div className="container">
                     <div className="logo">
                         <Link to="/BuildSomething">
-                            <img class="logo-img" src="image/Logo.png" width="50" height="50"/>
+                            <img class="logo-img" src="/image/Logo.png" width="50" height="50"/>
                         </Link>
                     </div>
                     <div id="mainListDiv" className="main_list">
@@ -56,7 +56,7 @@ function AppBanner() {
                                 type="text"
                                 value={searchText}
                             />
-                            <img src="image/search.png" width="25px" height="25px"/>
+                            <img src="/image/search.png" width="25px" height="25px"/>
                             {/* <input
                                 className="app-search-button"
                                 type="submit"

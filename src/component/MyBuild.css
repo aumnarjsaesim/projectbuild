@@ -5,7 +5,7 @@
     align-items: stretch;
     column-gap: 20px;
     row-gap: 20px;
-    padding-top: 20px;
+    padding-bottom: 20px;
   }
   
   .content-mb {
@@ -16,9 +16,43 @@
     box-sizing: border-box;
     height: 100%;
     padding-top: 20px;
+    
   }
 
   .all-content-mb{
     max-width: 1500px;
     margin: 20px;
+    margin: auto;
+  }
+
+  .item{
+    height: 200px;
+    padding-top: 20px;
+  }
+
+  .content-details{
+    padding-top: 20px;
+    background-color: #acacac;
+    height: 700px;
+    width: 100%;
+    margin:auto;
+  }
+
+  .title{
+    padding-left: 20px;
+  }
+
+  .title1{
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+
+  .table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .table td, .table th {
+    border: 1px solid #ddd;
+    padding: 8px;
   }
