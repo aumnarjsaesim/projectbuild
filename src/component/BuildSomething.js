@@ -1,32 +1,67 @@
 import React from "react";
 import "./BuildSomething.css";
-import { Link, Switch, Route, onChange } from "react-router-dom";
+import { Link, Switch, Route, onChange, useParams } from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
 
-function BuildSomething(cate,url) {
+function BuildSomething({cate,url}) {
+
+    // const [product5, setProduct5] = useState({
+    //     mouseTitle:"Mouse",
+    //     mouseName:"",
+    //     mousePic:"/image/iconmouse.png",
+    //     mouseUrl:"",
+    //     mouseAdvice:"",
+    //     mouseBanana:"",
+    //     mouseMercular:""
+    // });
 
     const [url5, setUrl5] = useState("");
 
     const [mouse, setMouse] = useState({
-        name:"Mouse",
-        pic:"/image/iconmouse.png"
+        title:"Mouse",
+        pic:"/image/iconmouse.png",
+        name:"",
+        url:"",
+        advice:"",
+        banana:"",
+        mercular:""
     });
     const [keyboard, setKeyboard] = useState({
-        name:"Keyboard",
-        pic:"/image/iconkeyboard.png"
+        title:"Keyboard",
+        pic:"/image/iconkeyboard.png",
+        name:"",
+        url:"",
+        advice:"",
+        banana:"",
+        mercular:""
     });
     const [headset, setHeadset] = useState({
-        name:"Headset",
-        pic:"/image/iconheadset.png"
+        title:"Headset",
+        pic:"/image/iconheadset.png",
+        name:"",
+        url:"",
+        advice:"",
+        banana:"",
+        mercular:""
     });
     const [mousepad, setMousepad] = useState({
-        name:"Mousepad",
-        pic:"/image/iconmousepad.png"
+        title:"Mousepad",
+        pic:"/image/iconmousepad.png",
+        name:"",
+        url:"",
+        advice:"",
+        banana:"",
+        mercular:""
     });
     const [microphone, setMicrophone] = useState({
-        name:"Microphone",
-        pic:"/image/iconmicrophone.png"
+        title:"Microphone",
+        pic:"/image/iconmicrophone.png",
+        name:"",
+        url:"",
+        advice:"",
+        banana:"",
+        mercular:""
     });
 
     const [allBrand, SetAllbrand] = useState([]);
@@ -62,7 +97,7 @@ function BuildSomething(cate,url) {
     useEffect(async () => {
     const res = await axios.get(
         // `http://localhost:3001/products/${url}/?page=${currentPage}${sort}`
-        `http://localhost:3001/products/${url5}/?page=${currentPage}${sort}${brand}`
+        `http://localhost:3001/products/${url}/?page=${currentPage}${sort}${brand}`
     );
     const dataBrand = res.data.allBrand;
     const dataProduct = res.data.data;
@@ -73,7 +108,7 @@ function BuildSomething(cate,url) {
 
         setProducts(dataProduct);
         setPage(dataPage);
-    }, [sort, brand,currentPage,url,url5]);
+    }, [sort, brand,currentPage,url]);
 
     useEffect(async () => {
         const res = await axios.get(`http://localhost:3001/products/${url}/`);
@@ -87,22 +122,186 @@ function BuildSomething(cate,url) {
             <div className="content-all">
                 <div className="grid">
 
-                    <header class="page-header">
-                        <div className="dropdown">
-                            <button className="dropbtn">order by</button>
-
-                            <div className="dropdown-content">
-                                <select id="list" onChange={(e) => setSort(e.target.value)}>
-                                <option value="">--- Select ---</option>
-                                <option value="&sortByPrice=low">Low - High</option>
-                                <option value="&sortByPrice=high">High - LOW</option>
-                                <option value="&sortByAZ=1">A - Z</option>
-                                <option value="&sortByAZ=-1">Z - A</option>
-                                </select>
-                            
+                    <Route path="/Build/Mouse/">
+                        <header class="page-header">
+                            <div className="page-number">
+                                <table>
+                                    <tr>
+                                    {allPage.map((page)=>{
+                                        return(
+                                        <td>
+                                            <div key={Math.random()}>
+                                                <button type="button" onClick={(e) => setChangePage(page)} value={page}>
+                                                {page}
+                                                </button>
+                                            </div>
+                                        </td>
+                                        )
+                                    })}
+                                    </tr>
+                                </table>
                             </div>
-                        </div>
-                    </header>
+
+                            <div className="dropdown">
+                                <button className="dropbtn">order by</button>
+
+                                <div className="dropdown-content">
+                                    <select id="list" onChange={(e) => setSort(e.target.value)}>
+                                    <option value="">--- Select ---</option>
+                                    <option value="&sortByPrice=low">Low - High</option>
+                                    <option value="&sortByPrice=high">High - LOW</option>
+                                    <option value="&sortByAZ=1">A - Z</option>
+                                    <option value="&sortByAZ=-1">Z - A</option>
+                                    </select>
+                                
+                                </div>
+                            </div>
+                        </header>
+                    </Route>
+                    <Route path="/Build/Keyboard/">
+                        <header class="page-header">
+                            <div className="page-number">
+                                <table>
+                                    <tr>
+                                    {allPage.map((page)=>{
+                                        return(
+                                        <td>
+                                            <div key={Math.random()}>
+                                                <button type="button" onClick={(e) => setChangePage(page)} value={page}>
+                                                {page}
+                                                </button>
+                                            </div>
+                                        </td>
+                                        )
+                                    })}
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div className="dropdown">
+                                <button className="dropbtn">order by</button>
+
+                                <div className="dropdown-content">
+                                    <select id="list" onChange={(e) => setSort(e.target.value)}>
+                                    <option value="">--- Select ---</option>
+                                    <option value="&sortByPrice=low">Low - High</option>
+                                    <option value="&sortByPrice=high">High - LOW</option>
+                                    <option value="&sortByAZ=1">A - Z</option>
+                                    <option value="&sortByAZ=-1">Z - A</option>
+                                    </select>
+                                
+                                </div>
+                            </div>
+                        </header>
+                    </Route>
+                    <Route path="/Build/Headset/">
+                        <header class="page-header">
+                            <div className="page-number">
+                                <table>
+                                    <tr>
+                                    {allPage.map((page)=>{
+                                        return(
+                                        <td>
+                                            <div key={Math.random()}>
+                                                <button type="button" onClick={(e) => setChangePage(page)} value={page}>
+                                                {page}
+                                                </button>
+                                            </div>
+                                        </td>
+                                        )
+                                    })}
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div className="dropdown">
+                                <button className="dropbtn">order by</button>
+
+                                <div className="dropdown-content">
+                                    <select id="list" onChange={(e) => setSort(e.target.value)}>
+                                    <option value="">--- Select ---</option>
+                                    <option value="&sortByPrice=low">Low - High</option>
+                                    <option value="&sortByPrice=high">High - LOW</option>
+                                    <option value="&sortByAZ=1">A - Z</option>
+                                    <option value="&sortByAZ=-1">Z - A</option>
+                                    </select>
+                                
+                                </div>
+                            </div>
+                        </header>
+                    </Route>
+                    <Route path="/Build/Mousepad/">
+                        <header class="page-header">
+                            <div className="page-number">
+                                <table>
+                                    <tr>
+                                    {allPage.map((page)=>{
+                                        return(
+                                        <td>
+                                            <div key={Math.random()}>
+                                                <button type="button" onClick={(e) => setChangePage(page)} value={page}>
+                                                {page}
+                                                </button>
+                                            </div>
+                                        </td>
+                                        )
+                                    })}
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div className="dropdown">
+                                <button className="dropbtn">order by</button>
+
+                                <div className="dropdown-content">
+                                    <select id="list" onChange={(e) => setSort(e.target.value)}>
+                                    <option value="">--- Select ---</option>
+                                    <option value="&sortByPrice=low">Low - High</option>
+                                    <option value="&sortByPrice=high">High - LOW</option>
+                                    <option value="&sortByAZ=1">A - Z</option>
+                                    <option value="&sortByAZ=-1">Z - A</option>
+                                    </select>
+                                
+                                </div>
+                            </div>
+                        </header>
+                    </Route>
+                    <Route path="/Build/Microphone/">
+                        <header class="page-header">
+                            <div className="page-number">
+                                <table>
+                                    <tr>
+                                    {allPage.map((page)=>{
+                                        return(
+                                        <td>
+                                            <div key={Math.random()}>
+                                                <button type="button" onClick={(e) => setChangePage(page)} value={page}>
+                                                {page}
+                                                </button>
+                                            </div>
+                                        </td>
+                                        )
+                                    })}
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div className="dropdown">
+                                <button className="dropbtn">order by</button>
+
+                                <div className="dropdown-content">
+                                    <select id="list" onChange={(e) => setSort(e.target.value)}>
+                                    <option value="">--- Select ---</option>
+                                    <option value="&sortByPrice=low">Low - High</option>
+                                    <option value="&sortByPrice=high">High - LOW</option>
+                                    <option value="&sortByAZ=1">A - Z</option>
+                                    <option value="&sortByAZ=-1">Z - A</option>
+                                    </select>
+                                
+                                </div>
+                            </div>
+                        </header>
+                    </Route>
 
                     <aside className="page-leftbar">
                         <div className="content">
@@ -111,14 +310,14 @@ function BuildSomething(cate,url) {
                                 <div className="item30">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Mouse" className="content-cate">
-                                            <img src={mouse.pic} className="pic-cate" onClick={() => setUrl5("Mouse")}/>
+                                            <img src={mouse.pic} className="pic-cate"/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Mouse" className="content-cate">
-                                            <h4 onClick={() => setUrl5("Mouse")}>{mouse.name}</h4>
+                                            <h4>{mouse.title}</h4>
                                         </Link>
                                     </div>
                                 </div>
@@ -127,14 +326,14 @@ function BuildSomething(cate,url) {
                                 <div className="item30">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Keyboard" className="content-cate">
-                                            <img src={keyboard.pic} className="pic-cate" onClick={() => setUrl5("Keyboard")}/>
+                                            <img src={keyboard.pic} className="pic-cate"/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Keyboard" className="content-cate">
-                                            <h4 onClick={() => setUrl5("Keyboard")}>{keyboard.name}</h4>
+                                            <h4>{keyboard.title}</h4>
                                         </Link>
                                     </div>
                                 </div>
@@ -150,7 +349,7 @@ function BuildSomething(cate,url) {
                                 <div className="item70">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Headset" className="content-cate">
-                                            <h4>{headset.name}</h4>
+                                            <h4>{headset.title}</h4>
                                         </Link>
                                     </div>
                                 </div>
@@ -166,7 +365,7 @@ function BuildSomething(cate,url) {
                                 <div className="item70">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Mousepad" className="content-cate">
-                                            <h4>{mousepad.name}</h4>
+                                            <h4>{mousepad.title}</h4>
                                         </Link>
                                     </div>
                                 </div>
@@ -182,14 +381,16 @@ function BuildSomething(cate,url) {
                                 <div className="item70">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Microphone" className="content-cate">
-                                            <h4>{microphone.name}</h4>
+                                            <h4>{microphone.title}</h4>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
-
-                            <button className="btn-buildnow" type="button">Build Now</button>
                             
+                            <Link to="/MyBuild/:product5" className="content-cate">
+                                <button className="btn-buildnow" type="button">Build Now</button>
+                            </Link>
+
                         </div>
                     </aside>
 
@@ -281,14 +482,41 @@ function BuildSomething(cate,url) {
                                                 </div>
                                                 <span>
                                                     <input type="button" value="ADD TO LIST" 
-                                                        onClick={(e) => setMouse({name:item.name,
+                                                        // onClick={(e) => setMouse({name:item.name,
+                                                        //     pic:item.advice[0]
+                                                        //     ? item.advice[0].data[0].image
+                                                        //     : item.banana[0]
+                                                        //     ? item.banana[0].data[0].image
+                                                        //     : item.mercular[0]
+                                                        //     ? item.mercular[0].data[0].image
+                                                        //     : ""})}
+                                                        onClick={(e)=> setMouse({
+                                                            title:item.name,
                                                             pic:item.advice[0]
                                                             ? item.advice[0].data[0].image
                                                             : item.banana[0]
                                                             ? item.banana[0].data[0].image
                                                             : item.mercular[0]
                                                             ? item.mercular[0].data[0].image
-                                                            : ""})}
+                                                            : "",
+                                                            name:item.name,
+                                                            url:item.advice[0]
+                                                                ? item.advice[0].data[0].image
+                                                                : item.banana[0]
+                                                                ? item.banana[0].data[0].image
+                                                                : item.mercular[0]
+                                                                ? item.mercular[0].data[0].image
+                                                                : "",
+                                                            advice:item.advice[0]
+                                                                ? item.advice[0].data[0].price
+                                                                : "N/A",
+                                                            mercular:item.mercular[0]
+                                                                ? item.mercular[0].data[0].price
+                                                                : "N/A",
+                                                            banana:item.banana[0]
+                                                                ? item.banana[0].data[0].price
+                                                                : "N/A"
+                                                        })}
                                                     />
                                                 </span>
                                             </div>
@@ -297,25 +525,6 @@ function BuildSomething(cate,url) {
                                     );
                                 })}
                             </div>
-                        </div>
-
-                        <div className="page-number">
-                            <table>
-                                <tr>
-                                {allPage.map((page)=>{
-                                    return(
-                                    <td>
-                                    <div key={Math.random()}>
-                                
-                                        <button type="button" onClick={(e) => setChangePage(page)} value={page}>
-                                        {page}
-                                        </button>
-                                    </div>
-                                    </td>
-                                    )
-                                })}
-                                </tr>
-                            </table>
                         </div>
 
                     </main>
@@ -397,14 +606,33 @@ function BuildSomething(cate,url) {
                                                 </div>
                                                 <span>
                                                     <input type="button" value="ADD TO LIST" 
-                                                        onClick={(e) => setKeyboard({name:item.name,
+                                                        onClick={(e)=> setKeyboard({
+                                                            title:item.name,
                                                             pic:item.advice[0]
                                                             ? item.advice[0].data[0].image
                                                             : item.banana[0]
                                                             ? item.banana[0].data[0].image
                                                             : item.mercular[0]
                                                             ? item.mercular[0].data[0].image
-                                                            : ""})}
+                                                            : "",
+                                                            name:item.name,
+                                                            url:item.advice[0]
+                                                                ? item.advice[0].data[0].image
+                                                                : item.banana[0]
+                                                                ? item.banana[0].data[0].image
+                                                                : item.mercular[0]
+                                                                ? item.mercular[0].data[0].image
+                                                                : "",
+                                                            advice:item.advice[0]
+                                                                ? item.advice[0].data[0].price
+                                                                : "N/A",
+                                                            mercular:item.mercular[0]
+                                                                ? item.mercular[0].data[0].price
+                                                                : "N/A",
+                                                            banana:item.banana[0]
+                                                                ? item.banana[0].data[0].price
+                                                                : "N/A"
+                                                        })}
                                                     />
                                                 </span>
                                             </div>
@@ -414,29 +642,360 @@ function BuildSomething(cate,url) {
                                 })}
                             </div>
                         </div>
+                        
+                    </main>
+                    </Route>
 
-                        <div className="page-number">
-                            <table>
-                                <tr>
-                                {allPage.map((page)=>{
-                                    return(
-                                    <td>
-                                    <div key={Math.random()}>
+                    
+                    <Route path="/Build/Headset/">
+                    <main className="page-main">
+
+                        <div className="content-data-category">
+                            <div className="grid-category-filter">
+                        
+                                {products.map((item) => {
+                            
+                                    return (
+                                        <div className="item" key={item._id}>
                                 
-                                        <button type="button" onClick={(e) => setChangePage(page)} value={page}>
-                                        {page}
-                                        </button>
-                                    </div>
-                                    </td>
-                                    )
+                                            <div className="card-content">
+                                                <img className="card-img"
+                                                    src={
+                                                    item.advice[0]
+                                                        ? item.advice[0].data[0].image
+                                                        : item.banana[0]
+                                                        ? item.banana[0].data[0].image
+                                                        : item.mercular[0]
+                                                        ? item.mercular[0].data[0].image
+                                                        : ""
+                                                    }
+                                                    height="250"
+                                                    width="10"
+                                                />
+                                                <p className="category-box">{item.name}</p>
+                                                <div className="container">
+                                                    <table className="card-box">
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                {item.advice[0]
+                                                                    ? item.advice[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://www.mercular.com/img/careers/logo.jpg"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                {item.mercular[0]
+                                                                    ? item.mercular[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+
+                                                            <td>
+                                                                {item.banana[0]
+                                                                    ? item.banana[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <span>
+                                                    <input type="button" value="ADD TO LIST" 
+                                                        onClick={(e)=> setHeadset({
+                                                            title:item.name,
+                                                            pic:item.advice[0]
+                                                            ? item.advice[0].data[0].image
+                                                            : item.banana[0]
+                                                            ? item.banana[0].data[0].image
+                                                            : item.mercular[0]
+                                                            ? item.mercular[0].data[0].image
+                                                            : "",
+                                                            name:item.name,
+                                                            url:item.advice[0]
+                                                                ? item.advice[0].data[0].image
+                                                                : item.banana[0]
+                                                                ? item.banana[0].data[0].image
+                                                                : item.mercular[0]
+                                                                ? item.mercular[0].data[0].image
+                                                                : "",
+                                                            advice:item.advice[0]
+                                                                ? item.advice[0].data[0].price
+                                                                : "N/A",
+                                                            mercular:item.mercular[0]
+                                                                ? item.mercular[0].data[0].price
+                                                                : "N/A",
+                                                            banana:item.banana[0]
+                                                                ? item.banana[0].data[0].price
+                                                                : "N/A"
+                                                        })}
+                                                    />
+                                                </span>
+                                            </div>
+                                       
+                                        </div>
+                                    );
                                 })}
-                                </tr>
-                            </table>
+                            </div>
                         </div>
                         
                     </main>
                     </Route>
 
+
+                    <Route path="/Build/Mousepad/">
+                    <main className="page-main">
+
+                        <div className="content-data-category">
+                            <div className="grid-category-filter">
+                        
+                                {products.map((item) => {
+                            
+                                    return (
+                                        <div className="item" key={item._id}>
+                                
+                                            <div className="card-content">
+                                                <img className="card-img"
+                                                    src={
+                                                    item.advice[0]
+                                                        ? item.advice[0].data[0].image
+                                                        : item.banana[0]
+                                                        ? item.banana[0].data[0].image
+                                                        : item.mercular[0]
+                                                        ? item.mercular[0].data[0].image
+                                                        : ""
+                                                    }
+                                                    height="250"
+                                                    width="10"
+                                                />
+                                                <p className="category-box">{item.name}</p>
+                                                <div className="container">
+                                                    <table className="card-box">
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                {item.advice[0]
+                                                                    ? item.advice[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://www.mercular.com/img/careers/logo.jpg"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                {item.mercular[0]
+                                                                    ? item.mercular[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+
+                                                            <td>
+                                                                {item.banana[0]
+                                                                    ? item.banana[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <span>
+                                                    <input type="button" value="ADD TO LIST" 
+                                                        onClick={(e)=> setMousepad({
+                                                            title:item.name,
+                                                            pic:item.advice[0]
+                                                            ? item.advice[0].data[0].image
+                                                            : item.banana[0]
+                                                            ? item.banana[0].data[0].image
+                                                            : item.mercular[0]
+                                                            ? item.mercular[0].data[0].image
+                                                            : "",
+                                                            name:item.name,
+                                                            url:item.advice[0]
+                                                                ? item.advice[0].data[0].image
+                                                                : item.banana[0]
+                                                                ? item.banana[0].data[0].image
+                                                                : item.mercular[0]
+                                                                ? item.mercular[0].data[0].image
+                                                                : "",
+                                                            advice:item.advice[0]
+                                                                ? item.advice[0].data[0].price
+                                                                : "N/A",
+                                                            mercular:item.mercular[0]
+                                                                ? item.mercular[0].data[0].price
+                                                                : "N/A",
+                                                            banana:item.banana[0]
+                                                                ? item.banana[0].data[0].price
+                                                                : "N/A"
+                                                        })}
+                                                    />
+                                                </span>
+                                            </div>
+                                       
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                        
+                    </main>
+                    </Route>
+
+
+                    <Route path="/Build/Microphone/">
+                    <main className="page-main">
+
+                        <div className="content-data-category">
+                            <div className="grid-category-filter">
+                        
+                                {products.map((item) => {
+                            
+                                    return (
+                                        <div className="item" key={item._id}>
+                                
+                                            <div className="card-content">
+                                                <img className="card-img"
+                                                    src={
+                                                    item.advice[0]
+                                                        ? item.advice[0].data[0].image
+                                                        : item.banana[0]
+                                                        ? item.banana[0].data[0].image
+                                                        : item.mercular[0]
+                                                        ? item.mercular[0].data[0].image
+                                                        : ""
+                                                    }
+                                                    height="250"
+                                                    width="10"
+                                                />
+                                                <p className="category-box">{item.name}</p>
+                                                <div className="container">
+                                                    <table className="card-box">
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                {item.advice[0]
+                                                                    ? item.advice[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://www.mercular.com/img/careers/logo.jpg"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                {item.mercular[0]
+                                                                    ? item.mercular[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <img className="img-recommend"
+                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
+                                                                    width="110"
+                                                                    height="40"
+                                                                />
+                                                            </td>
+
+                                                            <td>
+                                                                {item.banana[0]
+                                                                    ? item.banana[0].data[0].price
+                                                                    : "N/A"}
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <span>
+                                                    <input type="button" value="ADD TO LIST" 
+                                                        onClick={(e)=> setMicrophone({
+                                                            title:item.name,
+                                                            pic:item.advice[0]
+                                                            ? item.advice[0].data[0].image
+                                                            : item.banana[0]
+                                                            ? item.banana[0].data[0].image
+                                                            : item.mercular[0]
+                                                            ? item.mercular[0].data[0].image
+                                                            : "",
+                                                            name:item.name,
+                                                            url:item.advice[0]
+                                                                ? item.advice[0].data[0].image
+                                                                : item.banana[0]
+                                                                ? item.banana[0].data[0].image
+                                                                : item.mercular[0]
+                                                                ? item.mercular[0].data[0].image
+                                                                : "",
+                                                            advice:item.advice[0]
+                                                                ? item.advice[0].data[0].price
+                                                                : "N/A",
+                                                            mercular:item.mercular[0]
+                                                                ? item.mercular[0].data[0].price
+                                                                : "N/A",
+                                                            banana:item.banana[0]
+                                                                ? item.banana[0].data[0].price
+                                                                : "N/A"
+                                                        })}
+                                                    />
+                                                </span>
+                                            </div>
+                                       
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                        
+                    </main>
+                    </Route>
                     
                     
 

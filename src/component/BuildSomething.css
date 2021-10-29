@@ -187,6 +187,11 @@ body {
     text-decoration: none;
 }
 
+.content-cate:hover{
+  color: black;
+  text-decoration: none;
+}
+
 .card-content{
     color: #242424;
     background-color: #00000004;
@@ -333,7 +338,6 @@ body {
     position: absolute;
     text-align: center;
     font-size: 19px;
-    top: 350px;
     margin-left: 400px;
     font-weight: bold;
   }

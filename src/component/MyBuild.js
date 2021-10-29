@@ -2,17 +2,34 @@ import React from "react";
 import "./MyBuild.css";
 import Footer from './Footer';
 import AppBanner from './AppBanner';
-import { Link } from "react-router-dom";
+import { Link, Switch, Route, onChange, useParams } from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
 
-function MyBuild(props){
+function MyBuild(){
 
-    const [mouse, setMouse] = useState("Mouse");
-    const [keyboard, setKeyboard] = useState("Keyboard");
-    const [headset, setHeadset] = useState("Headset");
-    const [mousepad, setMousepad] = useState("Mousepad");
-    const [microphone, setMicrophone] = useState("Microphone");
+    const { product5 } = useParams();
+
+    const [mouse, setMouse] = useState({
+        name:"Mouse",
+        pic:"/image/iconmouse.png"
+    });
+    const [keyboard, setKeyboard] = useState({
+        name:"Keyboard",
+        pic:"/image/iconkeyboard.png"
+    });
+    const [headset, setHeadset] = useState({
+        name:"Headset",
+        pic:"/image/iconheadset.png"
+    });
+    const [mousepad, setMousepad] = useState({
+        name:"Mousepad",
+        pic:"/image/iconmousepad.png"
+    });
+    const [microphone, setMicrophone] = useState({
+        name:"Microphone",
+        pic:"/image/iconmicrophone.png"
+    });
 
     const [products, setProducts] = useState([
       {
@@ -37,32 +54,32 @@ function MyBuild(props){
                 <div className="grid-mb">
                     <div className="item">
                         <div className="content-mb">
-                            <img src="/image/iconmouse.png" height="60px" width="60px"/>
-                            <p>{mouse}</p>
+                            <img src={mouse.pic} height="60px" width="60px"/>
+                            <p>{mouse.name}</p>
                         </div>
                     </div>
                     <div className="item">
                         <div className="content-mb">
-                            <img src="/image/iconkeyboard.png" height="60px" width="60px"/>
-                            <p>{keyboard}</p>
+                            <img src={keyboard.pic} height="60px" width="60px"/>
+                            <p>{keyboard.name}</p>
                         </div>
                     </div>
                     <div className="item">
                         <div className="content-mb">
-                            <img src="/image/iconheadset.png" height="60px" width="60px"/>
-                            <p>{headset}</p>
+                            <img src={headset.pic} height="60px" width="60px"/>
+                            <p>{headset.name}</p>
                         </div>
                     </div>
                     <div className="item">
                         <div className="content-mb">
-                            <img src="/image/iconmousepad.png" height="60px" width="60px"/>
-                            <p>{mousepad}</p>
+                            <img src={mousepad.pic} height="60px" width="60px"/>
+                            <p>{mousepad.name}</p>
                         </div>
                     </div>
                     <div className="item">
                         <div className="content-mb">
-                            <img src="/image/iconmicrophone.png" height="60px" width="60px"/>
-                            <p>{microphone}</p>
+                            <img src={microphone.pic} height="60px" width="60px"/>
+                            <p>{microphone.name}</p>
                         </div>
                     </div>
                 </div>
@@ -91,7 +108,7 @@ function MyBuild(props){
                                 <p>mouse</p>
                             </td>
                             <td>
-                                
+                                <p>{product5.mouseName}</p>
                             </td>
                             <td>
                                 
