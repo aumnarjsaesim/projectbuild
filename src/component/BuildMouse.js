@@ -1,11 +1,11 @@
 import "./BuildSomething.css";
-import Footer from './Footer'
-import AppBanner from './AppBanner'
 import { Link, Switch, Route, onChange } from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
 
 function BuildMouse(cate,url) {
+
+    const [url5, setUrl5] = useState("");
 
     const [mouse, setMouse] = useState({
             name:"Mouse",
@@ -57,10 +57,11 @@ function BuildMouse(cate,url) {
     let currentPage = chagePage || 1;
   
   
+
     useEffect(async () => {
       const res = await axios.get(
         // `http://localhost:3001/products/${url}/?page=${currentPage}${sort}`
-        `http://localhost:3001/products/Mouse/?page=${currentPage}${sort}${brand}`
+        `http://localhost:3001/products/${url5}/?page=${currentPage}${sort}${brand}`
       );
       const dataBrand = res.data.allBrand;
       const dataProduct = res.data.data;
@@ -71,7 +72,7 @@ function BuildMouse(cate,url) {
 
         setProducts(dataProduct);
         setPage(dataPage);
-    }, [sort, brand,currentPage,url]);
+    }, [sort, brand,currentPage,url,url5]);
 
     useEffect(async () => {
         const res = await axios.get(`http://localhost:3001/products/${url}/`);
@@ -115,14 +116,14 @@ function BuildMouse(cate,url) {
                                 <div className="item30">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Mouse" className="content-cate">
-                                            <img src={mouse.pic} className="pic-cate"/>
+                                            <img src={mouse.pic} className="pic-cate" onClick={() => setUrl5("Mouse")}/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Mouse" className="content-cate">
-                                            <h4>{mouse.name}</h4>
+                                            <h4 onClick={() => setUrl5("Mouse")}>{mouse.name}</h4>
                                         </Link>
                                     </div>
                                 </div>
@@ -131,14 +132,14 @@ function BuildMouse(cate,url) {
                                 <div className="item30">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Keyboard" className="content-cate">
-                                            <img src={keyboard.pic} className="pic-cate"/>
+                                            <img src={keyboard.pic} className="pic-cate" onClick={() => setUrl5("Keyboard")}/>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="item70">
                                     <div className="content-leftbar1">
                                         <Link to="/Build/Keyboard" className="content-cate">
-                                            <h4>{keyboard.name}</h4>
+                                            <h4 onClick={() => setUrl5("Keyboard")}>{keyboard.name}</h4>
                                         </Link>
                                     </div>
                                 </div>
@@ -197,7 +198,7 @@ function BuildMouse(cate,url) {
                         </div>
                     </aside>
 
-                    <Route path="/Build/Mouse/" url="Mouse">
+                    <Route path="/Build/Mouse/">
                     <main className="page-main">
 
                         <div className="content-data-category">
@@ -293,7 +294,7 @@ function BuildMouse(cate,url) {
                     </main>
                     </Route>
 
-                    <Route path="/Build/Keyboard/" url="Keyboard">
+                    <Route path="/Build/Keyboard/">
                     <main className="page-main">
 
                         <div className="content-data-category">

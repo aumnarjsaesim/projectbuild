@@ -7,7 +7,7 @@ import BuildHeadset from './component/BuildHeadset';
 import BuildMousepad from './component/BuildMousepad';
 import BuildMicrophone from './component/BuildMicrophone';
 import MyBuild from './component/MyBuild';
-import { Switch, Route} from "react-router";
+import { Link, Switch, Route, onChange } from "react-router";
 import AppBanner from './component/AppBanner';
 import Footer from './component/Footer'
 
@@ -17,14 +17,15 @@ function App() {
       <AppBanner/>
       <Switch>
         <Route path="/BuildSomething">
-          <BuildSomething />
+          <BuildSomething/>
         </Route>
-        <Route path="/Build/Mouse" exact>
-          <BuildMouse cate="Mouse" url="Mouse" page="1"/>
+        <Route path="/Build/Mouse">
+          <BuildSomething cate="Mouse" url5="Mouse"/>
         </Route>
-        <Route path="/Build/Keyboard" exact>
-          <BuildMouse cate="Keyboard" url="Keyboard" page="1"/>
+        <Route path="/Build/Keyboard">
+          <BuildSomething cate="Keyboard" url5="Keyboard"/>
         </Route>
+        
         {/* <Route path="/BuildSomethingKeyboard">
           <BuildKeyboard/>
         </Route>
