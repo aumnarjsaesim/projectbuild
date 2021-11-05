@@ -3,20 +3,22 @@ import "./BuildSomething.css";
 import { Link, Switch, Route, onChange, useParams } from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { add } from "../redux/buildDetailSlice";
 
 function BuildSomething({cate,url}) {
 
-    // const [product5, setProduct5] = useState({
-    //     mouseTitle:"Mouse",
-    //     mouseName:"",
-    //     mousePic:"/image/iconmouse.png",
-    //     mouseUrl:"",
-    //     mouseAdvice:"",
-    //     mouseBanana:"",
-    //     mouseMercular:""
-    // });
+    const dispatch = useDispatch();
 
-    const [url5, setUrl5] = useState("");
+    function handleUpdate() {
+        dispatch(add({
+            mouse,
+            keyboard,
+            headset,
+            mousepad,
+            microphone
+        }));
+      }
 
     const [mouse, setMouse] = useState({
         title:"Mouse",
@@ -25,7 +27,8 @@ function BuildSomething({cate,url}) {
         url:"",
         advice:"",
         banana:"",
-        mercular:""
+        mercular:"",
+        model:""
     });
     const [keyboard, setKeyboard] = useState({
         title:"Keyboard",
@@ -34,7 +37,8 @@ function BuildSomething({cate,url}) {
         url:"",
         advice:"",
         banana:"",
-        mercular:""
+        mercular:"",
+        model:""
     });
     const [headset, setHeadset] = useState({
         title:"Headset",
@@ -43,7 +47,8 @@ function BuildSomething({cate,url}) {
         url:"",
         advice:"",
         banana:"",
-        mercular:""
+        mercular:"",
+        model:""
     });
     const [mousepad, setMousepad] = useState({
         title:"Mousepad",
@@ -52,7 +57,8 @@ function BuildSomething({cate,url}) {
         url:"",
         advice:"",
         banana:"",
-        mercular:""
+        mercular:"",
+        model:""
     });
     const [microphone, setMicrophone] = useState({
         title:"Microphone",
@@ -61,7 +67,8 @@ function BuildSomething({cate,url}) {
         url:"",
         advice:"",
         banana:"",
-        mercular:""
+        mercular:"",
+        model:""
     });
 
     const [allBrand, SetAllbrand] = useState([]);
@@ -118,6 +125,7 @@ function BuildSomething({cate,url}) {
     }, []);
 
     return (
+        
         <div className="App">
             <div className="content-all">
                 <div className="grid">
@@ -387,8 +395,10 @@ function BuildSomething({cate,url}) {
                                 </div>
                             </div>
                             
-                            <Link to="/MyBuild/:product5" className="content-cate">
-                                <button className="btn-buildnow" type="button">Build Now</button>
+                            <Link to="/MyBuild" className="content-cate">
+                                <button className="btn-buildnow" type="button" onClick={handleUpdate}>
+                                    Build Now
+                                </button>
                             </Link>
 
                         </div>
