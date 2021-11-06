@@ -5,6 +5,7 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { add } from "../redux/buildDetailSlice";
+import { v4 as uuidv4 } from 'uuid';
 
 function BuildSomething({cate,url}) {
 
@@ -12,6 +13,8 @@ function BuildSomething({cate,url}) {
 
     function handleUpdate() {
         dispatch(add({
+            id:uuidv4(),
+            userId:"123",
             mouse,
             keyboard,
             headset,
@@ -19,6 +22,7 @@ function BuildSomething({cate,url}) {
             microphone
         }));
       }
+
 
     const [mouse, setMouse] = useState({
         title:"Mouse",

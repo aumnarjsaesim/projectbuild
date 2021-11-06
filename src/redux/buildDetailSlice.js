@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const buildDeatilSlice = createSlice({
   name: "buildDetail",
   initialState: {
+    id:"",
+    userId:"",
     mouse: "",
     keyboard: "",
     headset: "",
@@ -11,6 +13,8 @@ export const buildDeatilSlice = createSlice({
   },
   reducers: {
     add: (state, action) => {
+      state.id = action.payload.id;
+      state.userId = action.payload.userId;
       state.mouse = action.payload.mouse;
       state.keyboard = action.payload.keyboard;
       state.headset = action.payload.headset;

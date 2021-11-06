@@ -7,6 +7,7 @@ import BuildSomething from './component/BuildSomething';
 // import BuildMousepad from './component/BuildMousepad';
 // import BuildMicrophone from './component/BuildMicrophone';
 import MyBuild from './component/MyBuild';
+import Fav from './component/Fav';
 import { Link, Switch, Route, onChange } from "react-router";
 import AppBanner from './component/AppBanner';
 import Footer from './component/Footer'
@@ -16,7 +17,6 @@ function App() {
     <div className="App">
       <AppBanner/>
       <Switch>
-
         <Route path="/BuildSomething">
           <BuildSomething/>
         </Route>
@@ -41,6 +41,9 @@ function App() {
           <MyBuild/>
         </Route>
 
+        <Route path="/Favorite">
+          <Fav/>
+        </Route>
       </Switch>
       <Footer/>
     </div>

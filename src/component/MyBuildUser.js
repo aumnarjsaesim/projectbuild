@@ -8,7 +8,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
 
-function MyBuild(){
+function MyBuildUser(){
 
     const buildDetail = useSelector((state) => state.buildDetail);
     console.log(buildDetail)
@@ -333,4 +333,4 @@ function MyBuild(){
     )
 }
 
-export default MyBuild;
+export default MyBuildUser;
