@@ -31,6 +31,11 @@ function AppBanner() {
                                 </Link>
                             </li>
                             <li>
+                                <Link to="/Favorite">
+                                    Favorite
+                                </Link>
+                            </li>
+                            <li>
                                 <a href="#">Login</a>
                             </li>
                         </ul>

@@ -1,12 +1,8 @@
 import './App.css';
 import React from "react";
 import BuildSomething from './component/BuildSomething';
-// import BuildMouse from './component/BuildMouse';
-// import BuildKeyboard from './component/BuildKeyboard';
-// import BuildHeadset from './component/BuildHeadset';
-// import BuildMousepad from './component/BuildMousepad';
-// import BuildMicrophone from './component/BuildMicrophone';
 import MyBuild from './component/MyBuild';
+import MyBuildUser from './component/MyBuildUser';
 import Fav from './component/Fav';
 import { Link, Switch, Route, onChange } from "react-router";
 import AppBanner from './component/AppBanner';
@@ -41,9 +37,14 @@ function App() {
           <MyBuild/>
         </Route>
 
+        <Route path="/MyBuildUser">
+          <MyBuildUser/>
+        </Route>
+
         <Route path="/Favorite">
           <Fav/>
         </Route>
+        
       </Switch>
       <Footer/>
     </div>

@@ -83,7 +83,9 @@ function MyBuild(){
     }else{
         microphoneAdvice = parseInt(buildDetail.microphone.advice);
     }
-    const sumAdvice = mouseAdvice + keyboardAdvice + headsetAdvice + mousepadAdvice + microphoneAdvice;
+    let sumAdvice = 0;
+    sumAdvice = mouseAdvice + keyboardAdvice + headsetAdvice + mousepadAdvice + microphoneAdvice || 0;
+    let sumAdviceShow = sumAdvice || "";
 
     let mouseBanana = 0;
     let keyboardBanana = 0;
@@ -115,7 +117,9 @@ function MyBuild(){
     }else{
         microphoneBanana = parseInt(buildDetail.microphone.banana);
     }
-    const sumBanana = mouseBanana + keyboardBanana + headsetBanana + mousepadBanana + microphoneBanana;
+    let sumBanana = 0;
+    sumBanana = mouseBanana + keyboardBanana + headsetBanana + mousepadBanana + microphoneBanana || 0;
+    let sumBananaShow = sumBanana || "";
 
     let mouseMercular = 0;
     let keyboardMercular = 0;
@@ -147,59 +151,60 @@ function MyBuild(){
     }else{
         microphoneMercular = parseInt(buildDetail.microphone.mercular);
     }
-    const sumMercular = mouseMercular + keyboardMercular + headsetMercular + mousepadMercular + microphoneMercular;
+    let sumMercular = 0;
+    sumMercular = mouseMercular + keyboardMercular + headsetMercular + mousepadMercular + microphoneMercular || 0;
+    let sumMercularShow = sumMercular || "";
 
     return(
-        <div className="App">
-            <div className="all-content-mb">
-                <h2 className="title-1">Your Gear</h2>
-                <div className="grid-mb">
-                    <div className="item">
-                        <div className="content-mb">
+        <div className="App-mm">
+            <div className="all-content-mb-mm">
+                <h2 className="title-1-mm">Your Gear</h2>
+                <div className="grid-mb-mm">
+                    <div className="item-mm">
+                        <div className="content-mb-mm">
                             <img src={mouse.pic} height="60px" width="60px"/>
-                            <p className="font-title">{mouse.name}</p>
+                            <p className="font-title-mm">{mouse.name}</p>
                         </div>
                     </div>
-                    <div className="item">
-                        <div className="content-mb">
+                    <div className="item-mm">
+                        <div className="content-mb-mm">
                             <img src={keyboard.pic} height="60px" width="60px"/>
-                            <p className="font-title">{keyboard.name}</p>
+                            <p className="font-title-mm">{keyboard.name}</p>
                         </div>
                     </div>
-                    <div className="item">
-                        <div className="content-mb">
+                    <div className="item-mm">
+                        <div className="content-mb-mm">
                             <img src={headset.pic} height="60px" width="60px"/>
-                            <p className="font-title">{headset.name}</p>
+                            <p className="font-title-mm">{headset.name}</p>
                         </div>
                     </div>
-                    <div className="item">
-                        <div className="content-mb">
+                    <div className="item-mm">
+                        <div className="content-mb-mm">
                             <img src={mousepad.pic} height="60px" width="60px"/>
-                            <p className="font-title">{mousepad.name}</p>
+                            <p className="font-title-mm">{mousepad.name}</p>
                         </div>
                     </div>
-                    <div className="item">
-                        <div className="content-mb">
+                    <div className="item-mm">
+                        <div className="content-mb-mm">
                             <img src={microphone.pic} height="60px" width="60px"/>
-                            <p className="font-title">{microphone.name}</p>
+                            <p className="font-title-mm">{microphone.name}</p>
                         </div>
                     </div>
                 </div>
-                <div className="content-details">
+                <div className="content-details-mm">
                     {/* <h3 className="title">DETAILS/PRICE LIST</h3> */}
 
-                    <div class="grid-dtf">
-                        <div class="item-dtf">
-                            <div class="content-dtf">
-                                <h3 className="title">DETAILS/PRICE LIST</h3>
+                    <div className="grid-dtf-mm">
+                        <div className="item-dtf-mm">
+                            <div className="content-dtf-mm">
+                                <h3 className="title-mm">DETAILS/PRICE LIST</h3>
                             </div>
                         </div>
-                        <div class="item-dtf">
-                            <div class="content-dtf">
-                                <img className="fav" src="/image/fav1.png" onClick={fav}/>
+                        <div className="item-dtf-mm">
+                            <div className="content-dtf-mm">
+                                <img className="fav-mm" src="/image/fav.png" onClick={fav}/>
                             </div>
                         </div>
-                        
                     </div>
 
                     <table className="table">
@@ -220,7 +225,7 @@ function MyBuild(){
                                 <p>MERCULAR</p>
                             </th>
                         </tr>
-                        <tr className="table-mouse">
+                        <tr>
                             <td>
                                 <p>mouse</p>
                             </td>
@@ -237,7 +242,7 @@ function MyBuild(){
                                 <p>{buildDetail.mouse.mercular}</p>
                             </td>
                         </tr>
-                        <tr className="table-keyboard">
+                        <tr>
                             <td>
                                 <p>keyboard</p>
                             </td>
@@ -254,7 +259,7 @@ function MyBuild(){
                                 <p>{buildDetail.keyboard.mercular}</p>
                             </td>
                         </tr>
-                        <tr className="table-headset">
+                        <tr>
                             <td>
                                 <p>headset</p>
                             </td>
@@ -271,7 +276,7 @@ function MyBuild(){
                                 <p>{buildDetail.headset.mercular}</p>
                             </td>
                         </tr>
-                        <tr className="table-mousepad">
+                        <tr>
                             <td>
                                 <p>mousepad</p>
                             </td>
@@ -288,7 +293,7 @@ function MyBuild(){
                                 <p>{buildDetail.mousepad.mercular}</p>
                             </td>
                         </tr>
-                        <tr className="table-microphone">
+                        <tr>
                             <td>
                                 <p>microphone</p>
                             </td>
@@ -305,7 +310,7 @@ function MyBuild(){
                                 <p>{buildDetail.microphone.mercular}</p>
                             </td>
                         </tr>
-                        <tr className="table-microphone">
+                        <tr>
                             <td>
                                 <p>Total</p>
                             </td>
@@ -313,13 +318,13 @@ function MyBuild(){
                                 <p></p>
                             </td>
                             <td>
-                                <p>{sumAdvice}</p>
+                                <p>{sumAdviceShow}</p>
                             </td>
                             <td>
-                                <p>{sumBanana}</p>
+                                <p>{sumBananaShow}</p>
                             </td>
                             <td>
-                                <p>{sumMercular}</p>
+                                <p>{sumMercularShow}</p>
                             </td>
                         </tr>
                     </table>

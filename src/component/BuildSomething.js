@@ -135,7 +135,7 @@ function BuildSomething({cate,url}) {
                 <div className="grid">
 
                     <Route path="/Build/Mouse/">
-                        <header class="page-header">
+                        <header className="page-header">
                             <div className="page-number">
                                 <table>
                                     <tr>
@@ -171,7 +171,7 @@ function BuildSomething({cate,url}) {
                         </header>
                     </Route>
                     <Route path="/Build/Keyboard/">
-                        <header class="page-header">
+                        <header className="page-header">
                             <div className="page-number">
                                 <table>
                                     <tr>
@@ -207,7 +207,7 @@ function BuildSomething({cate,url}) {
                         </header>
                     </Route>
                     <Route path="/Build/Headset/">
-                        <header class="page-header">
+                        <header className="page-header">
                             <div className="page-number">
                                 <table>
                                     <tr>
@@ -243,7 +243,7 @@ function BuildSomething({cate,url}) {
                         </header>
                     </Route>
                     <Route path="/Build/Mousepad/">
-                        <header class="page-header">
+                        <header className="page-header">
                             <div className="page-number">
                                 <table>
                                     <tr>
@@ -279,7 +279,7 @@ function BuildSomething({cate,url}) {
                         </header>
                     </Route>
                     <Route path="/Build/Microphone/">
-                        <header class="page-header">
+                        <header className="page-header">
                             <div className="page-number">
                                 <table>
                                     <tr>
@@ -411,7 +411,7 @@ function BuildSomething({cate,url}) {
                     <Route path="/BuildSomething">
                         <main className="page-main-bst">
                             <div className="content-bst">
-                                <div class="grid-main1">
+                                <div className="grid-main1">
                                     <div className="text-mid">
                                         <h1>Build Something ?</h1>
                                     </div>
@@ -420,597 +420,565 @@ function BuildSomething({cate,url}) {
                         </main>
                     </Route>
 
+
+
                     <Route path="/Build/Mouse/">
-                    <main className="page-main">
-
-                        <div className="content-data-category">
-                            <div className="grid-category-filter">
-                        
-                                {products.map((item) => {
-                            
-                                    return (
-                                        <div className="item" key={item._id}>
-                                
-                                            <div className="card-content">
-                                                <img className="card-img"
-                                                    src={
-                                                    item.advice[0]
-                                                        ? item.advice[0].data[0].image
-                                                        : item.banana[0]
-                                                        ? item.banana[0].data[0].image
-                                                        : item.mercular[0]
-                                                        ? item.mercular[0].data[0].image
-                                                        : ""
-                                                    }
-                                                    height="250"
-                                                    width="10"
-                                                />
-                                                <p className="category-box">{item.name}</p>
-                                                <div className="container">
-                                                    <table className="card-box">
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.advice[0]
-                                                                    ? item.advice[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://www.mercular.com/img/careers/logo.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.mercular[0]
-                                                                    ? item.mercular[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-
-                                                            <td>
-                                                                {item.banana[0]
-                                                                    ? item.banana[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <span>
-                                                    <input type="button" value="ADD TO LIST" 
-                                                        // onClick={(e) => setMouse({name:item.name,
-                                                        //     pic:item.advice[0]
-                                                        //     ? item.advice[0].data[0].image
-                                                        //     : item.banana[0]
-                                                        //     ? item.banana[0].data[0].image
-                                                        //     : item.mercular[0]
-                                                        //     ? item.mercular[0].data[0].image
-                                                        //     : ""})}
-                                                        onClick={(e)=> setMouse({
-                                                            title:item.name,
-                                                            pic:item.advice[0]
+                        <main className="page-main">
+                            <div className="content-buildall">
+                                <div className="grid-buildall">
+                                    {products.map((item) => {
+                                        return (
+                                            <div className="item-buildall" key={item._id}>
+                                                <div className="card-buildall">
+                                                    <img className="pic-buildall"
+                                                        src={
+                                                        item.advice[0]
                                                             ? item.advice[0].data[0].image
                                                             : item.banana[0]
                                                             ? item.banana[0].data[0].image
                                                             : item.mercular[0]
                                                             ? item.mercular[0].data[0].image
-                                                            : "",
-                                                            name:item.name,
-                                                            url:item.advice[0]
+                                                            : ""
+                                                        }
+                                                        height="250"
+                                                        width="250"
+                                                    />
+                                                    <p className="name-buildall">{item.name}</p>
+                                                    <div className="price-buildall">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.advice[0]
+                                                                        ? item.advice[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://www.mercular.com/img/careers/logo.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.mercular[0]
+                                                                        ? item.mercular[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+
+                                                                <td className="price-inbuildall2">
+                                                                    {item.banana[0]
+                                                                        ? item.banana[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <span>
+                                                        <input type="button" value="ADD TO LIST" 
+                                                            // onClick={(e) => setMouse({name:item.name,
+                                                            //     pic:item.advice[0]
+                                                            //     ? item.advice[0].data[0].image
+                                                            //     : item.banana[0]
+                                                            //     ? item.banana[0].data[0].image
+                                                            //     : item.mercular[0]
+                                                            //     ? item.mercular[0].data[0].image
+                                                            //     : ""})}
+                                                            onClick={(e)=> setMouse({
+                                                                title:item.name,
+                                                                pic:item.advice[0]
                                                                 ? item.advice[0].data[0].image
                                                                 : item.banana[0]
                                                                 ? item.banana[0].data[0].image
                                                                 : item.mercular[0]
                                                                 ? item.mercular[0].data[0].image
                                                                 : "",
-                                                            advice:item.advice[0]
-                                                                ? item.advice[0].data[0].price
-                                                                : "N/A",
-                                                            mercular:item.mercular[0]
-                                                                ? item.mercular[0].data[0].price
-                                                                : "N/A",
-                                                            banana:item.banana[0]
-                                                                ? item.banana[0].data[0].price
-                                                                : "N/A"
-                                                        })}
-                                                    />
-                                                </span>
-                                            </div>
-                                       
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                    </main>
-                    </Route>
-
-                    <Route path="/Build/Keyboard/">
-                    <main className="page-main">
-
-                        <div className="content-data-category">
-                            <div className="grid-category-filter">
-                        
-                                {products.map((item) => {
-                            
-                                    return (
-                                        <div className="item" key={item._id}>
-                                
-                                            <div className="card-content">
-                                                <img className="card-img"
-                                                    src={
-                                                    item.advice[0]
-                                                        ? item.advice[0].data[0].image
-                                                        : item.banana[0]
-                                                        ? item.banana[0].data[0].image
-                                                        : item.mercular[0]
-                                                        ? item.mercular[0].data[0].image
-                                                        : ""
-                                                    }
-                                                    height="250"
-                                                    width="10"
-                                                />
-                                                <p className="category-box">{item.name}</p>
-                                                <div className="container">
-                                                    <table className="card-box">
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.advice[0]
+                                                                name:item.name,
+                                                                url:item.advice[0]
+                                                                    ? item.advice[0].data[0].image
+                                                                    : item.banana[0]
+                                                                    ? item.banana[0].data[0].image
+                                                                    : item.mercular[0]
+                                                                    ? item.mercular[0].data[0].image
+                                                                    : "",
+                                                                advice:item.advice[0]
                                                                     ? item.advice[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://www.mercular.com/img/careers/logo.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.mercular[0]
+                                                                    : "N/A",
+                                                                mercular:item.mercular[0]
                                                                     ? item.mercular[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-
-                                                            <td>
-                                                                {item.banana[0]
+                                                                    : "N/A",
+                                                                banana:item.banana[0]
                                                                     ? item.banana[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                                    : "N/A"
+                                                            })}
+                                                        />
+                                                    </span>
                                                 </div>
-                                                <span>
-                                                    <input type="button" value="ADD TO LIST" 
-                                                        onClick={(e)=> setKeyboard({
-                                                            title:item.name,
-                                                            pic:item.advice[0]
-                                                            ? item.advice[0].data[0].image
-                                                            : item.banana[0]
-                                                            ? item.banana[0].data[0].image
-                                                            : item.mercular[0]
-                                                            ? item.mercular[0].data[0].image
-                                                            : "",
-                                                            name:item.name,
-                                                            url:item.advice[0]
-                                                                ? item.advice[0].data[0].image
-                                                                : item.banana[0]
-                                                                ? item.banana[0].data[0].image
-                                                                : item.mercular[0]
-                                                                ? item.mercular[0].data[0].image
-                                                                : "",
-                                                            advice:item.advice[0]
-                                                                ? item.advice[0].data[0].price
-                                                                : "N/A",
-                                                            mercular:item.mercular[0]
-                                                                ? item.mercular[0].data[0].price
-                                                                : "N/A",
-                                                            banana:item.banana[0]
-                                                                ? item.banana[0].data[0].price
-                                                                : "N/A"
-                                                        })}
-                                                    />
-                                                </span>
                                             </div>
-                                       
-                                        </div>
-                                    );
-                                })}
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                        
-                    </main>
+                        </main>
                     </Route>
-
                     
-                    <Route path="/Build/Headset/">
-                    <main className="page-main">
-
-                        <div className="content-data-category">
-                            <div className="grid-category-filter">
-                        
-                                {products.map((item) => {
-                            
-                                    return (
-                                        <div className="item" key={item._id}>
-                                
-                                            <div className="card-content">
-                                                <img className="card-img"
-                                                    src={
-                                                    item.advice[0]
-                                                        ? item.advice[0].data[0].image
-                                                        : item.banana[0]
-                                                        ? item.banana[0].data[0].image
-                                                        : item.mercular[0]
-                                                        ? item.mercular[0].data[0].image
-                                                        : ""
-                                                    }
-                                                    height="250"
-                                                    width="10"
-                                                />
-                                                <p className="category-box">{item.name}</p>
-                                                <div className="container">
-                                                    <table className="card-box">
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.advice[0]
-                                                                    ? item.advice[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://www.mercular.com/img/careers/logo.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.mercular[0]
-                                                                    ? item.mercular[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-
-                                                            <td>
-                                                                {item.banana[0]
-                                                                    ? item.banana[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <span>
-                                                    <input type="button" value="ADD TO LIST" 
-                                                        onClick={(e)=> setHeadset({
-                                                            title:item.name,
-                                                            pic:item.advice[0]
+                    <Route path="/Build/Keyboard/">
+                        <main className="page-main">
+                            <div className="content-buildall">
+                                <div className="grid-buildall">
+                                    {products.map((item) => {
+                                        return (
+                                            <div className="item-buildall" key={item._id}>
+                                                <div className="card-buildall">
+                                                    <img className="pic-buildall"
+                                                        src={
+                                                        item.advice[0]
                                                             ? item.advice[0].data[0].image
                                                             : item.banana[0]
                                                             ? item.banana[0].data[0].image
                                                             : item.mercular[0]
                                                             ? item.mercular[0].data[0].image
-                                                            : "",
-                                                            name:item.name,
-                                                            url:item.advice[0]
+                                                            : ""
+                                                        }
+                                                        height="250"
+                                                        width="250"
+                                                    />
+                                                    <p className="name-buildall">{item.name}</p>
+                                                    <div className="price-buildall">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.advice[0]
+                                                                        ? item.advice[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://www.mercular.com/img/careers/logo.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.mercular[0]
+                                                                        ? item.mercular[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+
+                                                                <td className="price-inbuildall2">
+                                                                    {item.banana[0]
+                                                                        ? item.banana[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <span>
+                                                        <input type="button" value="ADD TO LIST" 
+                                                            onClick={(e)=> setKeyboard({
+                                                                title:item.name,
+                                                                pic:item.advice[0]
                                                                 ? item.advice[0].data[0].image
                                                                 : item.banana[0]
                                                                 ? item.banana[0].data[0].image
                                                                 : item.mercular[0]
                                                                 ? item.mercular[0].data[0].image
                                                                 : "",
-                                                            advice:item.advice[0]
-                                                                ? item.advice[0].data[0].price
-                                                                : "N/A",
-                                                            mercular:item.mercular[0]
-                                                                ? item.mercular[0].data[0].price
-                                                                : "N/A",
-                                                            banana:item.banana[0]
-                                                                ? item.banana[0].data[0].price
-                                                                : "N/A"
-                                                        })}
-                                                    />
-                                                </span>
+                                                                name:item.name,
+                                                                url:item.advice[0]
+                                                                    ? item.advice[0].data[0].image
+                                                                    : item.banana[0]
+                                                                    ? item.banana[0].data[0].image
+                                                                    : item.mercular[0]
+                                                                    ? item.mercular[0].data[0].image
+                                                                    : "",
+                                                                advice:item.advice[0]
+                                                                    ? item.advice[0].data[0].price
+                                                                    : "N/A",
+                                                                mercular:item.mercular[0]
+                                                                    ? item.mercular[0].data[0].price
+                                                                    : "N/A",
+                                                                banana:item.banana[0]
+                                                                    ? item.banana[0].data[0].price
+                                                                    : "N/A"
+                                                            })}
+                                                        />
+                                                    </span>
+                                                </div>
                                             </div>
-                                       
-                                        </div>
-                                    );
-                                })}
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                        
-                    </main>
+                        </main>
                     </Route>
 
+                    <Route path="/Build/Headset/">
+                        <main className="page-main">
+                            <div className="content-buildall">
+                                <div className="grid-buildall">
+                                    {products.map((item) => {
+                                        return (
+                                            <div className="item-buildall" key={item._id}>
+                                                <div className="card-buildall">
+                                                    <img className="pic-buildall"
+                                                        src={
+                                                        item.advice[0]
+                                                            ? item.advice[0].data[0].image
+                                                            : item.banana[0]
+                                                            ? item.banana[0].data[0].image
+                                                            : item.mercular[0]
+                                                            ? item.mercular[0].data[0].image
+                                                            : ""
+                                                        }
+                                                        height="250"
+                                                        width="250"
+                                                    />
+                                                    <p className="name-buildall">{item.name}</p>
+                                                    <div className="price-buildall">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.advice[0]
+                                                                        ? item.advice[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://www.mercular.com/img/careers/logo.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.mercular[0]
+                                                                        ? item.mercular[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+
+                                                                <td className="price-inbuildall2">
+                                                                    {item.banana[0]
+                                                                        ? item.banana[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <span>
+                                                        <input type="button" value="ADD TO LIST" 
+                                                            onClick={(e)=> setHeadset({
+                                                                title:item.name,
+                                                                pic:item.advice[0]
+                                                                ? item.advice[0].data[0].image
+                                                                : item.banana[0]
+                                                                ? item.banana[0].data[0].image
+                                                                : item.mercular[0]
+                                                                ? item.mercular[0].data[0].image
+                                                                : "",
+                                                                name:item.name,
+                                                                url:item.advice[0]
+                                                                    ? item.advice[0].data[0].image
+                                                                    : item.banana[0]
+                                                                    ? item.banana[0].data[0].image
+                                                                    : item.mercular[0]
+                                                                    ? item.mercular[0].data[0].image
+                                                                    : "",
+                                                                advice:item.advice[0]
+                                                                    ? item.advice[0].data[0].price
+                                                                    : "N/A",
+                                                                mercular:item.mercular[0]
+                                                                    ? item.mercular[0].data[0].price
+                                                                    : "N/A",
+                                                                banana:item.banana[0]
+                                                                    ? item.banana[0].data[0].price
+                                                                    : "N/A"
+                                                            })}
+                                                        />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        </main>
+                    </Route>
 
                     <Route path="/Build/Mousepad/">
-                    <main className="page-main">
-
-                        <div className="content-data-category">
-                            <div className="grid-category-filter">
-                        
-                                {products.map((item) => {
-                            
-                                    return (
-                                        <div className="item" key={item._id}>
-                                
-                                            <div className="card-content">
-                                                <img className="card-img"
-                                                    src={
-                                                    item.advice[0]
-                                                        ? item.advice[0].data[0].image
-                                                        : item.banana[0]
-                                                        ? item.banana[0].data[0].image
-                                                        : item.mercular[0]
-                                                        ? item.mercular[0].data[0].image
-                                                        : ""
-                                                    }
-                                                    height="250"
-                                                    width="10"
-                                                />
-                                                <p className="category-box">{item.name}</p>
-                                                <div className="container">
-                                                    <table className="card-box">
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.advice[0]
-                                                                    ? item.advice[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://www.mercular.com/img/careers/logo.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.mercular[0]
-                                                                    ? item.mercular[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-
-                                                            <td>
-                                                                {item.banana[0]
-                                                                    ? item.banana[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <span>
-                                                    <input type="button" value="ADD TO LIST" 
-                                                        onClick={(e)=> setMousepad({
-                                                            title:item.name,
-                                                            pic:item.advice[0]
+                        <main className="page-main">
+                            <div className="content-buildall">
+                                <div className="grid-buildall">
+                                    {products.map((item) => {
+                                        return (
+                                            <div className="item-buildall" key={item._id}>
+                                                <div className="card-buildall">
+                                                    <img className="pic-buildall"
+                                                        src={
+                                                        item.advice[0]
                                                             ? item.advice[0].data[0].image
                                                             : item.banana[0]
                                                             ? item.banana[0].data[0].image
                                                             : item.mercular[0]
                                                             ? item.mercular[0].data[0].image
-                                                            : "",
-                                                            name:item.name,
-                                                            url:item.advice[0]
+                                                            : ""
+                                                        }
+                                                        height="250"
+                                                        width="250"
+                                                    />
+                                                    <p className="name-buildall">{item.name}</p>
+                                                    <div className="price-buildall">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.advice[0]
+                                                                        ? item.advice[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://www.mercular.com/img/careers/logo.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.mercular[0]
+                                                                        ? item.mercular[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+
+                                                                <td className="price-inbuildall2">
+                                                                    {item.banana[0]
+                                                                        ? item.banana[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <span>
+                                                        <input type="button" value="ADD TO LIST" 
+                                                            onClick={(e)=> setMousepad({
+                                                                title:item.name,
+                                                                pic:item.advice[0]
                                                                 ? item.advice[0].data[0].image
                                                                 : item.banana[0]
                                                                 ? item.banana[0].data[0].image
                                                                 : item.mercular[0]
                                                                 ? item.mercular[0].data[0].image
                                                                 : "",
-                                                            advice:item.advice[0]
-                                                                ? item.advice[0].data[0].price
-                                                                : "N/A",
-                                                            mercular:item.mercular[0]
-                                                                ? item.mercular[0].data[0].price
-                                                                : "N/A",
-                                                            banana:item.banana[0]
-                                                                ? item.banana[0].data[0].price
-                                                                : "N/A"
-                                                        })}
-                                                    />
-                                                </span>
+                                                                name:item.name,
+                                                                url:item.advice[0]
+                                                                    ? item.advice[0].data[0].image
+                                                                    : item.banana[0]
+                                                                    ? item.banana[0].data[0].image
+                                                                    : item.mercular[0]
+                                                                    ? item.mercular[0].data[0].image
+                                                                    : "",
+                                                                advice:item.advice[0]
+                                                                    ? item.advice[0].data[0].price
+                                                                    : "N/A",
+                                                                mercular:item.mercular[0]
+                                                                    ? item.mercular[0].data[0].price
+                                                                    : "N/A",
+                                                                banana:item.banana[0]
+                                                                    ? item.banana[0].data[0].price
+                                                                    : "N/A"
+                                                            })}
+                                                        />
+                                                    </span>
+                                                </div>
                                             </div>
-                                       
-                                        </div>
-                                    );
-                                })}
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                        
-                    </main>
+                        </main>
                     </Route>
-
 
                     <Route path="/Build/Microphone/">
-                    <main className="page-main">
-
-                        <div className="content-data-category">
-                            <div className="grid-category-filter">
-                        
-                                {products.map((item) => {
-                            
-                                    return (
-                                        <div className="item" key={item._id}>
-                                
-                                            <div className="card-content">
-                                                <img className="card-img"
-                                                    src={
-                                                    item.advice[0]
-                                                        ? item.advice[0].data[0].image
-                                                        : item.banana[0]
-                                                        ? item.banana[0].data[0].image
-                                                        : item.mercular[0]
-                                                        ? item.mercular[0].data[0].image
-                                                        : ""
-                                                    }
-                                                    height="250"
-                                                    width="10"
-                                                />
-                                                <p className="category-box">{item.name}</p>
-                                                <div className="container">
-                                                    <table className="card-box">
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.advice[0]
-                                                                    ? item.advice[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://www.mercular.com/img/careers/logo.jpg"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-                                                            <td>
-                                                                {item.mercular[0]
-                                                                    ? item.mercular[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td>
-                                                                <img className="img-recommend"
-                                                                    src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
-                                                                    width="110"
-                                                                    height="40"
-                                                                />
-                                                            </td>
-
-                                                            <td>
-                                                                {item.banana[0]
-                                                                    ? item.banana[0].data[0].price
-                                                                    : "N/A"}
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <span>
-                                                    <input type="button" value="ADD TO LIST" 
-                                                        onClick={(e)=> setMicrophone({
-                                                            title:item.name,
-                                                            pic:item.advice[0]
+                        <main className="page-main">
+                            <div className="content-buildall">
+                                <div className="grid-buildall">
+                                    {products.map((item) => {
+                                        return (
+                                            <div className="item-buildall" key={item._id}>
+                                                <div className="card-buildall">
+                                                    <img className="pic-buildall"
+                                                        src={
+                                                        item.advice[0]
                                                             ? item.advice[0].data[0].image
                                                             : item.banana[0]
                                                             ? item.banana[0].data[0].image
                                                             : item.mercular[0]
                                                             ? item.mercular[0].data[0].image
-                                                            : "",
-                                                            name:item.name,
-                                                            url:item.advice[0]
+                                                            : ""
+                                                        }
+                                                        height="250"
+                                                        width="250"
+                                                    />
+                                                    <p className="name-buildall">{item.name}</p>
+                                                    <div className="price-buildall">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-advice.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.advice[0]
+                                                                        ? item.advice[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://www.mercular.com/img/careers/logo.jpg"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+                                                                <td className="price-inbuildall2">
+                                                                    {item.mercular[0]
+                                                                        ? item.mercular[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img className="price-inbuildall1"
+                                                                        src="https://notebookspec.com/laravel/public//images/component-shop-banana.png"
+                                                                        width="110"
+                                                                        height="40"
+                                                                    />
+                                                                </td>
+
+                                                                <td className="price-inbuildall2">
+                                                                    {item.banana[0]
+                                                                        ? item.banana[0].data[0].price
+                                                                        : "N/A"}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <span>
+                                                        <input type="button" value="ADD TO LIST" 
+                                                            onClick={(e)=> setMicrophone({
+                                                                title:item.name,
+                                                                pic:item.advice[0]
                                                                 ? item.advice[0].data[0].image
                                                                 : item.banana[0]
                                                                 ? item.banana[0].data[0].image
                                                                 : item.mercular[0]
                                                                 ? item.mercular[0].data[0].image
                                                                 : "",
-                                                            advice:item.advice[0]
-                                                                ? item.advice[0].data[0].price
-                                                                : "N/A",
-                                                            mercular:item.mercular[0]
-                                                                ? item.mercular[0].data[0].price
-                                                                : "N/A",
-                                                            banana:item.banana[0]
-                                                                ? item.banana[0].data[0].price
-                                                                : "N/A"
-                                                        })}
-                                                    />
-                                                </span>
+                                                                name:item.name,
+                                                                url:item.advice[0]
+                                                                    ? item.advice[0].data[0].image
+                                                                    : item.banana[0]
+                                                                    ? item.banana[0].data[0].image
+                                                                    : item.mercular[0]
+                                                                    ? item.mercular[0].data[0].image
+                                                                    : "",
+                                                                advice:item.advice[0]
+                                                                    ? item.advice[0].data[0].price
+                                                                    : "N/A",
+                                                                mercular:item.mercular[0]
+                                                                    ? item.mercular[0].data[0].price
+                                                                    : "N/A",
+                                                                banana:item.banana[0]
+                                                                    ? item.banana[0].data[0].price
+                                                                    : "N/A"
+                                                            })}
+                                                        />
+                                                    </span>
+                                                </div>
                                             </div>
-                                       
-                                        </div>
-                                    );
-                                })}
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                        
-                    </main>
+                        </main>
                     </Route>
-                    
                     
 
                 </div>
